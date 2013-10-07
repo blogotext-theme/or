@@ -1,87 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="UTF-8" />
 	<title>{article_titre_page}{blog_nom}</title>
+	<meta name="viewport" content="width=device-width, user-scalable=yes" />
 	<meta name="generator" content="BlogoText" />
 	<meta name="robots" content="all" />
 	<meta name="author" content="{blog_auteur}" />
 	<meta name="description" content="{blog_description}" />
+	<link rel="icon" type="image/png" href="{style}/images/favicon.png" />
+	<link rel="apple-touch-icon" href="{style}/images/apple-touch-icon.png">
+	<link rel="canonical" href="{racine_du_site}" />
+	<link rel="image_src" href="{style}/images/apple-touch-icon.png" />
+	<meta itemprop="name" content="{article_titre}" />
+	<meta itemprop="description" content="{article_chapo}" />
+	<meta itemprop="image" content="{style}/images/apple-touch-icon.png">
+	<meta property="og:title" content="{article_titre_page}{blog_nom}" />
+	<meta property="og:url" content="{racine_du_site}" />
+	<meta property="og:description" content="{blog_description}" />
+	<meta property="og:site_name" content="{blog_nom}" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:image" content="{style}/images/apple-touch-icon.png" />
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{style}/images/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<link type="text/css" rel="stylesheet" href="{style}/style.css" />
 	<link type="application/rss+xml" rel="alternate" title="RSS 2.0 - Articles" href="{rss}" />
-	<meta name="viewport" content="width=device-width, user-scalable=yes" />
-	<style type="text/css">#email-adress {display: none;}</style>
 </head>
 <body>
-
-<header id="top">
-<h1><a href="{racine_du_site}">{blog_nom}</a></h1>
-<h2>{blog_description}</h2>
-</header>
-
-<div id="wrapper">
-	<section id="sidebar">
-		<nav id="navigate">
-			<h3><img src="themes/default/search.png"/> Rechercher</h3>
-			{recherche}
-			{calendrier}
-			<hr/>
-		</nav>
-		<nav id="last_comments">
-			<h3><img src="themes/default/icon_comment.png"/> Derniers commentaires</h3>
-			{commentaires_encart}
-			<hr/>
-		</nav>
-		<nav id="liens">
-			<h3>Autres</h3>
-			<ul>
-				<li><a href="index.php">Blog</a></li>
-				<li><a href="index.php?mode=links">Liens</a></li>
-				<li><a href="index.php?mode=comments">Derniers commentaires</a></li>
-			</ul>
-			<hr/>
-		</nav>
-		<nav id="random">
-			<h3>Un article au hasard</h3>
+	<header id="top">
+		<h1><a href="{racine_du_site}" title="">{blog_nom}</a></h1>
+		<h2>{blog_description}</h2>
+	</header>
+	<div id="wrapper">
+		<aside id="sidebar">
+			<nav id="navigate">
+				<h3><img src="{style}/images/search.png" alt=""/> Rechercher</h3>
+				{recherche}
+				{calendrier}
+				<hr/>
+			</nav>
+			<nav id="last_comments">
+				<h3><img src="{style}/images/icon_comment.png" alt=""/> Derniers commentaires</h3>
+				{commentaires_encart}
+				<hr/>
+			</nav>
+			<nav id="liens">
+				<h3>Autres</h3>
 				<ul>
-					<li><a href="?random">Un article au hasard ?</a></li>
+					<li><a href="index.php" title="">Blog</a></li>
+					<li><a href="index.php?mode=links" title="">Liens</a></li>
+					<li><a href="index.php?mode=comments" title="">Derniers commentaires</a></li>
 				</ul>
-			<hr/>
-		</nav>
-		<nav id="rss">
-			<h4>Fils RSS</h4>
-			<ul>
-				<li><a href="rss.php"><img src="themes/default/feed.png" /> RSS</a> : Blog</li>
-				<li><a href="rss.php?full"><img src="themes/default/feed.png" /> RSS</a> : Blog (articles complets)</li>
-			</ul>
-			<hr/>
-		</nav>
-		<nav id="tags">
-			<h3><img src="themes/default/icon_tag.png" /> Tags</h3>
-			{categories_encart}
-			<hr/>
-		</nav>
-	</section>
-
-	<section id="contenu">
-		{BOUCLE_posts}
-
-		// ici il s'affichera ce qu'on veut : un article, un commentaire, un lien sauvé…
-		// les thèmes pour ces choses sont dans le dossier "template"
-		// chaque "objet" (lien, article, …) dispose de son propre formatage. 
-
-		// **** le texte que vous mettez ici (dans la "boucle") ne sera pas éxécuté ni affiché. ****
-
-		{/BOUCLE_posts}
-		
-	</section>
-
-	<br style="clear:both;" />
-	{pagination}
-</div> <!-- einde #wrapper -->
-
-
-<footer><b>{blog_auteur}</b>, licence CC0 – Publié avec <a href="http://lehollandaisvolant.net/blogotext/">BlogoText</a> – Thème par <a href="http://lehollandaisvolant.net/">Timo van Neerden</a>, retouché par OranginaRouge</footer>
+				<hr/>
+			</nav>
+			<nav id="random">
+				<h3>Un article au hasard</h3>
+					<ul>
+						<li><a href="?random" title="">Un article au hasard ?</a></li>
+					</ul>
+				<hr/>
+			</nav>
+			<nav id="rss">
+				<h4>Fils RSS</h4>
+				<ul>
+					<li><a href="rss.php" title=""><img src="{style}/images/feed.png" alt="" /> RSS</a> : Blog</li>
+					<li><a href="rss.php?full" title=""><img src="{style}/images/feed.png" alt=""/> RSS</a> : Blog (articles complets)</li>
+				</ul>
+				<hr/>
+			</nav>
+			<nav id="tags">
+				<h3><img src="{style}/images/icon_tag.png" alt="" /> Tags</h3>
+				{categories_encart}
+				<hr/>
+			</nav>
+		</aside>
+		<section id="contenu">
+			{BOUCLE_posts}
+			// ici il s'affichera ce qu'on veut : un article, un commentaire, un lien sauvé…
+			// les thèmes pour ces choses sont dans le dossier "template"
+			// chaque "objet" (lien, article, …) dispose de son propre formatage. 
+			// **** le texte que vous mettez ici (dans la "boucle") ne sera pas éxécuté ni affiché. ****
+			{/BOUCLE_posts}
+		</section>
+		<br style="clear:both;" />
+		{pagination}
+	</div> <!-- einde #wrapper -->
+	<footer><b>{blog_auteur}</b>, licence CC0 – Publié avec <a href="http://lehollandaisvolant.net/blogotext/" title="">BlogoText</a> – Thème par <a href="http://lehollandaisvolant.net/" title="">Timo van Neerden</a>, retouché par OranginaRouge</footer>
 
 <script type="text/javascript">
 /* Tag script found at : http://www.siteduzero.com/tutoriel-3-34703-insertion-de-balises-dans-une-zone-de-texte.html */
@@ -109,7 +115,6 @@ function insertTag(startTag, endTag, tag, tagType) {
 	}
 	field.scrollTop = scroll;
 }
-
 function reply(code) {
 	var field = document.getElementById('form-commentaire').getElementsByTagName('textarea')[0];
 	field.focus();
@@ -120,7 +125,6 @@ function reply(code) {
 	field.scrollTop = 10000;
 	field.focus();
 }
-
 function resize(id, dht) {
 	var elem = document.getElementById(id);
 	var ht = elem.offsetHeight;
@@ -128,7 +132,6 @@ function resize(id, dht) {
 	elem.style.height = size+"px";
 	return false;
 }
-
 </script>
 </body>
 </html>
